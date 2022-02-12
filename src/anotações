@@ -1,0 +1,239 @@
+/* 
+        
+        EXEMPLO DE UMA function
+function App(){
+    return <div> Olá mundo</div>
+}
+
+export default App;
+
+        O CODIGGO MESMO ESCRITO EM COM SINTAXE HTML E AUTOMATICAMENTE CONVERTIDO PARA REACT. EXEMPLO
+
+const app = () => { -> VARIAVEL EM JS
+    React.createElement('div', null, 'Olá mundo);
+}
+        os dois são a mesma coisa
+const app = () => {
+    return (
+    <div>Olá mundo</div>
+    );
+}
+
+        SOMA COM JAVASCRIPT
+        const App = () => {
+  let n1: number = 10;
+  let n2: number = 3;
+
+
+return(
+  <div>Soma:{n1 + n2 }</div>
+);
+}
+
+export default App;
+
+        SOMA COM TYPESCRIPT
+        const App = () => {
+            let n1: number = 10;
+            let n2: number = 3;
+          
+            function somar(n1: number, n2:number): number{
+              return n1 + n2;
+            }
+          
+          return(
+            <div>Soma:{somar(n1, n2) + n2}</div>
+          );
+          }
+
+          CONCATENAR
+          const App = () => {
+            let name: String = 'Kauã';
+            let lastname: String = 'Silva';
+            
+          
+          return (
+            <div>Nome completo: {`${name} ${lastname}`}</div>
+           );
+          }
+
+            LINK COMO VARIAVEL
+            const App = () => {
+                let link: string = 'https://www.google.com';
+                 o "s"  da string do link começar com minuscula
+               
+               return (
+                 <div>
+                   clique ali: <br/>
+                   <a href={link}>site do google</a>
+                 </div>
+                );
+               }
+               TRABALHANDO COM VARIOS COMPONENTES
+               UTILIZADO NORMALMENTE QUABNDO O BLOCO DE CODIGO É MUITO GRANDE OU QUANDO O COMPONENTE É USADO VARIAS VEZES
+            const Header = () => { -> primeiro componente
+            return(
+                <header> -> tag de identificação do componente
+                <h1>título da página</h1>
+                <hr />
+                </header>
+            )
+            }
+            const App = () => {
+            return (
+            <div>
+                <Header/> coloca tag principal do componente q eu quero usar dentro de outro
+                salve
+            </div>
+            );
+            }
+            export default App;
+
+            MODO RECOMENDADO E MAIS ORGANIZADO DE USAR COMPONENTES
+            CRIAR UMA PASTA SEPARADA COM OS COMPONENTES E EXPORTAR
+            export const Header = () => {
+            return(
+                <header>
+                <h1>Título da página</h1>
+                <hr />
+                </header>
+            )
+        }
+             E EXPORTA PARA A PRINCIPAL FACILITANTO A MANUTENÇÃO DO CODIGO
+                    import { Header } from "./components/Header";
+
+            const App = () => {
+            return (
+            <div>
+                <Header/>
+                salve
+            </div>
+            );
+            }
+            export default App;
+
+                PROPS, 
+                        type Props = {
+                title?: string; -> sempre colocar interrogação
+                subtitle?: string;
+            }
+            export const Header = ({ title }: Props) => {
+                return(
+                    <header>
+                    <h1>{title}</h1>
+                    <hr />
+                    </header>
+                )
+            }
+            const App = () => {
+            return (
+            <div>
+                <Header title="Primeiro título"/>
+                <Header title="segundo título"/>
+                
+                salve
+            </div>
+            );
+            }
+
+                FRAGMENT -> PROPS SÓ PODEM SER USADAS EXPORTANDO APENAS UM ELEMENTO
+                            type Props = {
+                url: string;
+                legend: string;
+            }
+
+            export const Photo = ({url, legend}: Props) => {
+                return(
+                    <> -> INICIO DO FRAGMENTO
+                        <img src={url}/>
+                            <p>{legend}</p>
+                    </> FINAL DO FRAGEMNTO
+                );
+            }
+
+            export default App;
+
+                CHILDREN -> SERVE PARA PODER USAR PROPS DENTRO DO COMPONENT QUE FOI EXPORTADO
+                              import { Children, ReactNode} from 'react';
+
+              type Props = {
+                  
+                  legend: string;
+                  children: ReactNode;
+              }
+
+
+              export const Photo = ({legend, children}: Props) => {
+                  return(
+                      <>
+                          {children}
+                              <p>{legend}</p>
+                      </>
+                  );
+              }
+              <Photo legend="Google">
+      <img src="https://www.google.com.br/google.jpg" alt="" />
+    </Photo>
+            
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               */
